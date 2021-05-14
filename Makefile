@@ -5,13 +5,23 @@ OBJS	= ${SRCS:.c=.o}
 NAME	= libft.a
 
 CFLAGS	= -Wall -Werror -Wextra -g
+LIBFLAGS	= rc
 
 CC		= gcc ${CFLAGS}
-
-${NAME}: ${SRCS}
-	${CC} -c ${SRCS}
+MAKELIB	= ar ${LIBFLAGS}
 
 all: ${NAME}
 
+${NAME}: ${OBJS}
+	${MAKELIB} ${NAME} ${OBJS}
+
+${OBJS}: ${SRCS}
+	${CC} -c ${SRCS}
+
 clean:
 	rm -f ${OBJS}
+
+fclean: clean
+	rm -f ${NAME}
+
+re: fclean all
