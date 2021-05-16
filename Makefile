@@ -1,14 +1,14 @@
-SRCS	= ft_strlen.c ft_memset.c ft_bzero.c
+SRCS		= ft_strlen.c ft_memset.c ft_bzero.c
 
-OBJS	= ${SRCS:.c=.o}
+OBJS		= ${SRCS:.c=.o}
 
-NAME	= libft.a
+NAME		= libft.a
 
-CFLAGS	= -Wall -Werror -Wextra -g
+CFLAGS		= -Wall -Werror -Wextra -g
 LIBFLAGS	= rc
 
-CC		= gcc ${CFLAGS}
-MAKELIB	= ar ${LIBFLAGS}
+CC			= gcc ${CFLAGS}
+MAKELIB		= ar ${LIBFLAGS}
 
 all: ${NAME}
 
