@@ -1,9 +1,9 @@
 #ifndef LIBFT_H
-# define LIBFT_H
 # include <stddef.h>
+# define LIBFT_H
 
-unsigned int	ft_strlen(char *str);
-void			*ft_memset(void *s, int c, long unsigned int n);
-void			ft_bzero(void *s, size_t n);
+size_t	ft_strlen(char *str);
+void	*ft_memset(void *s, int c, long unsigned int n);
+void	ft_bzero(void *s, size_t n);
 
 #endif
