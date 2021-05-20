@@ -14,19 +14,19 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
+	char				*c_pos;
 	size_t				i;
-	const unsigned char	*s;
-	unsigned char		*d;
 
-	i = 0;
-	s = src;
-	d = dest;
-	while (i < n)
+	c_pos = ft_memchr(src, c, n);
+	if (c_pos)
 	{
-		d[i] = s[i];
-		if (s[i] == c)
-			break ;
-		i++;
+		i = c_pos - (char *)src + 1;
+		ft_memmove(dest, src, i);
+		return ((char *)dest + i);
 	}
-	return (dest);
+	else
+	{
+		ft_memmove(dest, src, n);
+		return (NULL);
+	}
 }
