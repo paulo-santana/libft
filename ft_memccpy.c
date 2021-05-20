@@ -6,7 +6,7 @@
 /*   By: psergio- <psergio-@students.42sp.org.br>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 21:50:24 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/18 21:50:24 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/20 02:37:27 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,21 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	char				*c_pos;
 	size_t				i;
+	const unsigned char	*s;
+	unsigned char		*d;
 
 	c_pos = ft_memchr(src, c, n);
+	i = 0;
+	s = src;
+	d = dest;
+	while (i < n)
+	{
+		d[i] = s[i];
+		if (s[i] == c)
+			break ;
+		i++;
+	}
 	if (c_pos)
-	{
-		i = c_pos - (char *)src + 1;
-		ft_memmove(dest, src, i);
-		return ((char *)dest + i);
-	}
-	else
-	{
-		ft_memmove(dest, src, n);
-		return (NULL);
-	}
+		return (dest + i + 1);
+	return (NULL);
 }
