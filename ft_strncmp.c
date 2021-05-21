@@ -27,8 +27,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		c1 = s1[counter];
 		c2 = s2[counter];
 		diff = c1 - c2;
-		if (diff != 0)
-			return (diff);
+		if (diff < 0)
+			return (-1);
+		else if (diff > 0)
+			return (1);
 		counter++;
 	}
 	return (0);
