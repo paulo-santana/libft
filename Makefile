@@ -18,13 +18,11 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 	${MAKELIB} ${NAME} ${OBJS}
 
-_test:
-	${CC} ${TEST_FLAGS} -c ${SRCS}
+test: CFLAGS := ${CFLAGS} ${TEST_FLAGS}
+test: ${NAME} clean
 
-test: _test ${NAME} clean
-
-.c.o:
-	${CC} -c $<
+%.o: %.c
+	${CC} -c $< -o $@
 
 clean:
 	rm -f ${OBJS}
@@ -33,3 +31,5 @@ fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
+
+.PHONY: fclean clean re test _test all
