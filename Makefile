@@ -19,7 +19,7 @@ ${NAME}: ${OBJS}
 	${MAKELIB} ${NAME} ${OBJS}
 
 test: CFLAGS := ${CFLAGS} ${TEST_FLAGS}
-test: ${NAME} clean
+test: ${NAME}
 
 %.o: %.c
 	${CC} -c $< -o $@
