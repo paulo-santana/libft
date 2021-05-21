@@ -6,8 +6,9 @@ OBJS		= ${SRCS:.c=.o}
 
 NAME		= libft.a
 
-CFLAGS		= -Wall -Werror -Wextra -g
+CFLAGS		= -Wall -Werror -Wextra
 LIBFLAGS	= rc
+TEST_FLAGS	= -fsanitize=address -g
 
 CC			= gcc ${CFLAGS}
 MAKELIB		= ar ${LIBFLAGS}
@@ -16,6 +17,11 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${MAKELIB} ${NAME} ${OBJS}
+
+_test:
+	${CC} ${TEST_FLAGS} -c ${SRCS}
+
+test: _test ${NAME} clean
 
 .c.o:
 	${CC} -c $<
