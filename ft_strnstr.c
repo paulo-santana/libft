@@ -52,6 +52,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	limit = len - little_len;
 	while (i <= limit)
 	{
+		if ((char *)&big[i] == 0)
+			break ;
 		match_start = (char *)&big[i];
 		matches = str_matches(match_start, little);
 		if (matches)
