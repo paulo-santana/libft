@@ -7,8 +7,7 @@ OBJS		= ${SRCS:.c=.o}
 NAME		= libft.a
 
 CFLAGS		= -Wall -Werror -Wextra
-LIBFLAGS	= rc
-TEST_FLAGS	= -fsanitize=address -g
+LIBFLAGS	= rcs
 
 CC			= gcc ${CFLAGS}
 MAKELIB		= ar ${LIBFLAGS}
@@ -17,9 +16,6 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${MAKELIB} ${NAME} ${OBJS}
-
-test: CFLAGS := ${CFLAGS} ${TEST_FLAGS}
-test: ${NAME}
 
 %.o: %.c
 	${CC} -c $< -o $@
@@ -32,4 +28,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: fclean clean re test _test all
+.PHONY: fclean clean re test all
