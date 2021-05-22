@@ -11,7 +11,7 @@ NAME		= libft.a
 CFLAGS		= -Wall -Werror -Wextra
 LIBFLAGS	= rcs
 
-CC			= gcc ${CFLAGS}
+CC			= clang ${CFLAGS}
 MAKELIB		= ar ${LIBFLAGS}
 
 all: ${NAME}
