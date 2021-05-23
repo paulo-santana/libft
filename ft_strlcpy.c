@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psergio- <psergio-@students.42sp.org.br>   +#+  +:+       +#+        */
+/*   By: psergio- <psergio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 13:10:16 by psergio-          #+#    #+#             */
 /*   Updated: 2021/05/20 13:10:16 by psergio-         ###   ########.fr       */
