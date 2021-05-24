@@ -26,8 +26,8 @@ static size_t	find_end(char const *str, char const *set)
 {
 	size_t	end;
 
-	end = ft_strlen(str) - 1;
-	while (str[end] && ft_strchr(set, str[end]))
+	end = ft_strlen(str);
+	while (end && ft_strchr(set, str[end]))
 		end--;
 	return (end + 1);
 }
