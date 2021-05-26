@@ -22,7 +22,7 @@ static size_t	get_next_word(char const *s, char c)
 	return (limit);
 }
 
-static void	*free_result(char **result, size_t size)
+static char	**free_result(char **result, size_t size)
 {
 	size_t	i;
 
