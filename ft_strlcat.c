@@ -6,7 +6,7 @@
 /*   By: psergio- <psergio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:38:39 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/20 16:38:39 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/26 12:36:34 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dest, const char *src, unsigned int size)
 	j = 0;
 	while (src[j] != '\0')
 	{
-		if (size > i)
+		if (i + 1 < size)
 			dest[i] = src[j];
 		i++;
 		j++;
