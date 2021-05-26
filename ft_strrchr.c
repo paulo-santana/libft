@@ -6,7 +6,7 @@
 /*   By: psergio- <psergio-@students.42sp.org.br>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 19:33:58 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/20 19:33:58 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/25 22:54:40 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	last_pos = NULL;
 	while (1)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			last_pos = (char *)s + i;
 		if (!s[i])
 			return (last_pos);
