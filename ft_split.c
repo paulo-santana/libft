@@ -12,17 +12,14 @@
 
 #include "libft.h"
 
-static char	*get_next_word(char const *s, char c)
+static size_t	get_next_word(char const *s, char c)
 {
-	char	*word;
 	size_t	limit;
 
-	(void)word;
 	limit = 0;
 	while (s[limit] && s[limit] != c)
 		limit++;
-	word = ft_substr(s, 0, limit);
-	return (word);
+	return (limit);
 }
 
 static void	*free_result(char **result, size_t size)
@@ -36,30 +33,50 @@ static void	*free_result(char **result, size_t size)
 	return (NULL);
 }
 
+size_t	count_splits(char const *s, char c)
+{
+	size_t	i;
+	size_t	splits;
+
+	splits = 0;
+	i = 0;
+	while (*s && *s == c)
+		s++;
+	while (s[i])
+	{
+		if (!i)
+			splits++;
+		else if (s[i - 1] == c && s[i] != c)
+			splits++;
+		i++;
+	}
+	return (splits);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	size_t	pieces;
 	size_t	i;
+	size_t	limit;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	pieces = 1;
-	while (s[i])
-		if (s[i++] == c)
-			pieces++;
+	pieces = count_splits(s, c);
 	result = malloc(sizeof(char *) * (pieces + 1));
 	if (!result)
 		return (NULL);
 	i = 0;
 	while (i < pieces)
 	{
-		result[i] = get_next_word(s, c);
+		while (*s && *s == c)
+			s++;
+		limit = get_next_word(s, c);
+		result[i] = ft_substr(s, 0, limit);
 		if (!result[i])
 			return (free_result(result, i));
-		if (++i < pieces)
-			s = ft_strchr(s + 1, c) + 1;
+		s += limit + 1;
+		i++;
 	}
 	result[pieces] = NULL;
 	return (result);

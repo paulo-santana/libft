@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 		nb = -nb;
 	len = 1;
 	while (n / 10 != 0 && len++)
-		n /= 10;
+		n = n / 10;
 	result = malloc(sizeof(char) * (len + 1 + is_negative));
 	if (!result)
 		return (NULL);
