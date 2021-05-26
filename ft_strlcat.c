@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psergio- <psergio-@students.42sp.org.br>   +#+  +:+       +#+        */
+/*   By: psergio- <psergio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 16:38:39 by psergio-          #+#    #+#             */
 /*   Updated: 2021/05/20 16:38:39 by psergio-         ###   ########.fr       */
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dest, const char *src, unsigned int size)
 	j = 0;
 	while (src[j] != '\0')
 	{
-		if ((int)(size - i) > 1)
+		if (size > i)
 			dest[i] = src[j];
 		i++;
 		j++;
