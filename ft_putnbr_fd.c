@@ -6,13 +6,13 @@
 /*   By: psergio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 15:51:20 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/25 21:38:46 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/25 22:33:07 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	int		length;
 	int		is_min;
