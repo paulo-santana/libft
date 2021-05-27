@@ -3,11 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psergio- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: psergio- <psergio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/04 19:38:55 by psergio-          #+#    #+#             */
-
-/*   Updated: 2021/05/17 23:05:31 by psergio-         ###   ########.fr       */
+/*   Created: 2021/05/27 13:05:11 by psergio-          #+#    #+#             */
+/*   Updated: 2021/05/27 13:05:20 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +60,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
