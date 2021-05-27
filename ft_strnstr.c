@@ -38,8 +38,8 @@ int	str_matches(char *str, const char *target)
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		i;
-	int		limit;
+	size_t	i;
+	size_t	limit;
 	int		matches;
 	int		little_len;
 	char	*match_start;
