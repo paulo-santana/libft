@@ -46,11 +46,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	matches = 0;
-	if (len == 0)
-		return (NULL);
 	little_len = ft_strlen((char *)little);
 	if (little_len == 0)
 		return ((char *)big);
+	if (len == 0)
+		return (NULL);
 	limit = len - little_len;
 	while (i <= limit)
 	{
