@@ -9,7 +9,7 @@ SRCS		= ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 
 OBJS		= ${SRCS:.c=.o}
 
-BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c
+BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 
 BONUS_OBJS	= ${BONUS_SRCS:.c=.o}
 
