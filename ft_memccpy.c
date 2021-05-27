@@ -6,7 +6,7 @@
 /*   By: psergio- <psergio-@students.42sp.org.br>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 21:50:24 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/20 02:37:27 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/27 00:23:13 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		d[i] = s[i];
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			break ;
 		i++;
 	}

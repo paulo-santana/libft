@@ -6,7 +6,7 @@
 /*   By: psergio- <psergio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 12:46:30 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/23 12:46:30 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/27 01:00:22 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	limit;
 
-	if (!s)
-		return (NULL);
 	pieces = count_splits(s, c);
 	result = malloc(sizeof(char *) * (pieces + 1));
 	if (!result)

@@ -6,7 +6,7 @@
 /*   By: psergio- <psergio-@students.42sp.org.br>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 02:13:35 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/25 22:43:09 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/27 00:23:35 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *area, int chr, size_t n)
 	size_t			i;
 	unsigned char	*s;
 
-	if (!area)
-		return (NULL);
 	s = (unsigned char *)area;
 	i = 0;
 	while (i < n)
