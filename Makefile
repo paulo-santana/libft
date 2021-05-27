@@ -9,6 +9,11 @@ SRCS		= ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 
 OBJS		= ${SRCS:.c=.o}
 
+BONUS_SRCS	= ft_lstnew.c
+
+BONUS_OBJS	= ${BONUS_SRCS:.c=.o}
+
+
 NAME		= libft.a
 
 CFLAGS		= -Wall -Werror -Wextra
@@ -19,14 +24,18 @@ MAKELIB		= ar ${LIBFLAGS}
 
 all: ${NAME}
 
+bonus: ${BONUS_OBJS} ${NAME}
+	${MAKELIB} ${NAME} ${BONUS_OBJS}
+
 ${NAME}: ${OBJS}
-	${MAKELIB} ${NAME} ${OBJS}
+	${MAKELIB} ${NAME} $?
 
 %.o: %.c
 	${CC} -c $< -o $@
 
 clean:
 	rm -f ${OBJS}
+	rm -f ${BONUS_OBJS}
 
 fclean: clean
 	rm -f ${NAME}
