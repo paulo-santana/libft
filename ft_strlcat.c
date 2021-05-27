@@ -27,12 +27,15 @@ size_t	ft_strlcat(char *dest, const char *src, unsigned int size)
 	j = 0;
 	while (src[j] != '\0')
 	{
-		if (i + 1 < size)
-			dest[i] = src[j];
+		if (i + 1 >= size)
+			break ;
+		dest[i] = src[j];
 		i++;
 		j++;
 	}
 	if (size > i)
 		dest[i] = '\0';
+	while (src[j++])
+		i++;
 	return (i);
 }
