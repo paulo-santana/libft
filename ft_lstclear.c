@@ -6,7 +6,7 @@
 /*   By: psergio- <psergio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 16:08:40 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/27 16:08:40 by psergio-         ###   ########.fr       */
+/*   Updated: 2021/05/27 16:43:16 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		ft_lstdelone(lsttmp, del);
-		free(lsttmp);
 		lsttmp = (*lst)->next;
 		*lst = lsttmp;
 	}
