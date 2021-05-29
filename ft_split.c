@@ -33,7 +33,7 @@ static char	**free_result(char **result, size_t size)
 	return (NULL);
 }
 
-size_t	count_splits(char const *s, char c)
+static size_t	count_splits(char const *s, char c)
 {
 	size_t	i;
 	size_t	splits;
