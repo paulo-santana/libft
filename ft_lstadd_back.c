@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#define TEST_FAILED 1
-#define TEST_SUCCESS 0
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
