@@ -1,28 +1,38 @@
-SRCS		= ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
-			  ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlcpy.c ft_strlcat.c \
-			  ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c \
-			  ft_isspace.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
-			  ft_isprint.c ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c \
-			  ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
-			  ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-			  ft_putnbr_fd.c
+SRCS_DIR = ./srcs
+OBJS_DIR = ./objs
 
-OBJS		= ${SRCS:.c=.o}
+SRCS_FILES = ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
+			ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlcpy.c ft_strlcat.c \
+			ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c \
+			ft_isspace.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+			ft_isprint.c ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c \
+			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
+			ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
+			ft_putnbr_fd.c
 
-BONUS_SRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+SRCS = ${addprefix ${SRCS_DIR}/, ${SRCS_FILES}}
+
+OBJS_FILES = ${SRCS_FILES:.c=.o}
+
+OBJS = ${addprefix ${OBJS_DIR}/, ${OBJS_FILES}}
+
+BONUS_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			  ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 			  ft_lstmap.c
 
-BONUS_OBJS	= ${BONUS_SRCS:.c=.o}
+BONUS_SRCS = ${addprefix ${SRCS_DIR}/, ${BONUS_FILES}}
 
+BONUS_OBJS_FILES = ${BONUS_FILES:.c=.o}
 
-NAME		= libft.a
+BONUS_OBJS = ${addprefix ${OBJS_DIR}/, ${BONUS_OBJS_FILES}}
 
-CFLAGS		= -Wall -Werror -Wextra
-LIBFLAGS	= rcs
+NAME = libft.a
 
-CC			= gcc ${CFLAGS}
-MAKELIB		= ar ${LIBFLAGS}
+CFLAGS = -Wall -Werror -Wextra
+LIBFLAGS = rcs
+
+CC = gcc ${CFLAGS}
+MAKELIB = ar ${LIBFLAGS}
 
 all: ${NAME}
 
@@ -32,7 +42,7 @@ bonus: ${BONUS_OBJS} ${NAME}
 ${NAME}: ${OBJS}
 	${MAKELIB} ${NAME} $?
 
-%.o: %.c
+${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
 	${CC} -c $< -o $@
 
 clean:
