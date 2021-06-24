@@ -21,10 +21,10 @@ OBJS = ${addprefix ${OBJS_DIR}/, ${OBJS_FILES}}
 
 NAME = libft.a
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 LIBFLAGS = rcs
 
-CC = gcc ${CFLAGS}
+CC = clang ${CFLAGS}
 MAKELIB = ar ${LIBFLAGS}
 
 all: ${NAME}
