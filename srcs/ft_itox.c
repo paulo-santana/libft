@@ -33,6 +33,8 @@ char	*ft_itox(ssize_t nbr)
 	char	*hexmap;
 	int		nbr_size;
 
+	if (nbr == 0)
+		return (ft_strdup("0"));
 	hexmap = "0123456789abcdef";
 	nbr_size = get_nbr_size(nbr);
 	nbr_hex = malloc(nbr_size + 1);
