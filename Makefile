@@ -21,7 +21,7 @@ OBJS = ${addprefix ${OBJS_DIR}/, ${OBJS_FILES}}
 
 NAME = libft.a
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g# -fsanitize=address
 LIBFLAGS = rcs
 
 CC = clang ${CFLAGS}
@@ -37,7 +37,6 @@ ${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
 	${CC} -c $< -o $@
 
 clean:
-	echo ${OBJS}
 	rm -f ${OBJS}
 
 fclean: clean
