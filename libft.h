@@ -53,6 +53,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_stoa_base(size_t nbr, const char *base);
 char	*ft_itoa(int n);
 char	*ft_uitoa(unsigned int nbr);
 char	*ft_itox(ssize_t n);
