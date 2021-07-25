@@ -24,14 +24,11 @@ int	str_matches(char *str, const char *target)
 		if (target[to_find_pos] != str[to_find_pos])
 		{
 			matches = 0;
-			to_find_pos++;
 			break ;
 		}
 		else
-		{
 			matches = 1;
-			to_find_pos++;
-		}
+		to_find_pos++;
 	}
 	return (matches);
 }
