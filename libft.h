@@ -43,6 +43,9 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+size_t	min(int a, int b);
+size_t	max(int a, int b);
+
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_ends_with(const char *str, const char *tail);

@@ -1,12 +1,5 @@
 #include "../libft.h"
 
-size_t	min(int a, int b)
-{
-	if (a > b)
-		return b;
-	return a;
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
@@ -21,7 +14,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = ft_calloc(max_size + 1, 1);
 	if (!sub)
 		return (NULL);
-	if (start < str_len)
-		ft_strlcpy(sub, s + start, max_size + 1);
+	ft_strlcpy(sub, s + start, max_size + 1);
 	return (sub);
 }
