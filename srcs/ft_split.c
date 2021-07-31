@@ -28,7 +28,7 @@ static char	**free_result(char **result, size_t size)
 
 	i = 0;
 	while (i < size)
-		free(result[i]);
+		free(result[i++]);
 	free(result);
 	return (NULL);
 }
