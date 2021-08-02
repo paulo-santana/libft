@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_ends_with.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psergio- <psergio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 22:28:27 by psergio-          #+#    #+#             */
-/*   Updated: 2021/05/22 22:28:27 by psergio-         ###   ########.fr       */
+/*   Created: 2021/07/25 01:15:50 by psergio-          #+#    #+#             */
+/*   Updated: 2021/07/25 01:15:50 by psergio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_ends_with(const char *str, const char *tail)
 {
-	char	*sub;
 	size_t	str_len;
-	size_t	max_size;
+	size_t	tail_len;
 
-	str_len = ft_strlen(s);
-	if (str_len > start)
-		max_size = min(ft_strlen(s + start), len);
-	else
-		return (ft_strdup(""));
-	sub = ft_calloc(max_size + 1, 1);
-	if (!sub)
-		return (NULL);
-	ft_strlcpy(sub, s + start, max_size + 1);
-	return (sub);
+	str_len = ft_strlen(str);
+	tail_len = ft_strlen(tail);
+	if (tail_len > str_len)
+		return (0);
+	while (str_len-- && tail_len--)
+		if (str[str_len] != tail[tail_len])
+			return (0);
+	return (1);
 }
