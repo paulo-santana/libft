@@ -14,7 +14,27 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include "get_next_line.h"
+
+typedef struct s_buffer {
+	int		start;
+	int		next_nl;
+	int		end;
+	char	*data;
+}			t_buffer;
+
+/**
+ * Retrieves a string that ends with a newline charactere from the file
+ * descriptor `fd` and make the pointer `line` point to it
+ * */
+
+int		get_next_line(int fd, char **line);
+
+# define GNL_ERROR -1
+# define GNL_END_OF_FILE 0
+# define GNL_LINE_READ 1
+# define GNL_NO_NEWLINE 2
+
+# define BUFFER_SIZE 32
 
 /**
  * A node that points to the next member of the list
@@ -25,6 +45,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+
+/**
+ * Joins two blocks of memory in a new mallocked one.
+ */
+
+void	*ft_memjoin(void *s1, size_t size1, void *s2, size_t size2);
 
 /**
  * Writes the first `n` bytes of the memory address pointed to by `s` with the
