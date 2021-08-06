@@ -24,7 +24,7 @@ OBJS = ${addprefix ${OBJS_DIR}/, ${OBJS_FILES}}
 
 NAME = libft.a
 
-CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE_DIR)
+CFLAGS = -g -Wall -Werror -Wextra -I$(INCLUDE_DIR)
 LIBFLAGS = rcs
 
 CC = clang ${CFLAGS}
