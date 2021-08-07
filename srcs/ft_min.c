@@ -12,7 +12,14 @@
 
 #include "../libft.h"
 
-size_t	ft_min(int a, int b)
+int	ft_min(int a, int b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+size_t	ft_umin(size_t a, size_t b)
 {
 	if (a > b)
 		return (b);

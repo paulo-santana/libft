@@ -203,7 +203,13 @@ int		ft_isprint(int c);
  * Returns the smallest value between `a` and `b`.
  */
 
-size_t	ft_min(int a, int b);
+int		ft_min(int a, int b);
+
+/**
+ * Returns the smallest value between the unsigned values `a` and `b`.
+ */
+
+size_t	ft_umin(size_t a, size_t b);
 
 /**
  * Returns the biggest value between `a` and `b`.
