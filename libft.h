@@ -203,13 +203,13 @@ int		ft_isprint(int c);
  * Returns the smallest value between `a` and `b`.
  */
 
-size_t	min(int a, int b);
+size_t	ft_min(int a, int b);
 
 /**
  * Returns the biggest value between `a` and `b`.
  */
 
-size_t	max(int a, int b);
+size_t	ft_max(int a, int b);
 
 /**
  * Returns the uppercase version of the character `c`.

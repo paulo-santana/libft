@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	str_len = ft_strlen(s);
 	if (str_len > start)
-		max_size = min(ft_strlen(s + start), len);
+		max_size = ft_min(ft_strlen(s + start), len);
 	else
 		return (ft_strdup(""));
 	sub = ft_calloc(max_size + 1, 1);
