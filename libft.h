@@ -46,7 +46,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-
 /**
  * Joins two blocks of memory in a new mallocked one.
  */
