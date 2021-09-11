@@ -15,11 +15,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# define BUFFER_SIZE 32
+
 typedef struct s_buffer {
 	int		start;
 	int		next_nl;
 	int		end;
-	char	*data;
+	char	data[BUFFER_SIZE];
 }			t_buffer;
 
 /**
@@ -33,8 +35,6 @@ int		get_next_line(int fd, char **line);
 # define GNL_END_OF_FILE 0
 # define GNL_LINE_READ 1
 # define GNL_NO_NEWLINE 2
-
-# define BUFFER_SIZE 32
 
 /**
  * A node that points to the next member of the list

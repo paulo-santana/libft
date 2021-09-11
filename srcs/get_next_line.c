@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../libft.h"
+#include <stdio.h>
 
 void	clear_buffer(char **buffer)
 {
@@ -101,13 +102,8 @@ int	get_next_line(int fd, char **line)
 	*line = new_line;
 	if (fd < 0 || fd >= FD_SETSIZE)
 		return (GNL_ERROR);
-	if (buffers[fd].data == NULL)
-	{
-		buffers[fd].data = malloc((BUFFER_SIZE) * sizeof(char));
-		if (buffers[fd].data == NULL)
-			return (GNL_ERROR);
+	if (buffers[fd].data[0] == '\0')
 		buffers[fd].start = BUFFER_SIZE;
-	}
 	result = GNL_NO_NEWLINE;
 	while (result == GNL_NO_NEWLINE)
 	{
@@ -115,6 +111,6 @@ int	get_next_line(int fd, char **line)
 		*line = new_line;
 	}
 	if (result == GNL_END_OF_FILE || result == GNL_ERROR)
-		clear_buffer(&(buffers[fd].data));
+		buffers[fd].data[0] = '\0';
 	return (result);
 }
