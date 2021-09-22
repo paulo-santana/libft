@@ -163,6 +163,12 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 
 /**
+ * Returns true if the string passed as parameter only contains digits
+ */
+
+int		ft_isnumber(char *str);
+
+/**
  * returns 1 if the character `c` is a space. 0 otherwise.
  */
 
