@@ -15,7 +15,9 @@ SRCS_FILES = ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 			ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 			ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 			ft_lstiter.c ft_lstmap.c ft_memjoin.c ft_isnumber.c \
-			get_next_line.c
+			get_next_line.c \
+			ft_stack_new.c ft_stack_do_nothing.c ft_stack_pop.c \
+			ft_stack_push.c ft_stack_destroy.c
 
 SRCS = ${addprefix ${SRCS_DIR}/, ${SRCS_FILES}}
 

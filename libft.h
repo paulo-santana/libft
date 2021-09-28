@@ -46,6 +46,11 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_stack {
+	int		max_size;
+	t_list	*top;
+}	t_stack;
+
 /**
  * Joins two blocks of memory in a new mallocked one.
  */
@@ -334,5 +339,13 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+
+t_stack			*ft_stack_new(int max_size);
+void			ft_stack_push(t_stack *stack, void *content);
+void			*ft_stack_pop(t_stack *stack);
+void			ft_stack_destroy(t_stack *stack);
+
+/** Does nothing */
+void			ft_stack_do_nothing(void *content);
 
 #endif
