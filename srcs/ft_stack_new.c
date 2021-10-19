@@ -12,13 +12,13 @@
 
 #include "../libft.h"
 
-t_stack	*ft_stack_new(int max_size)
+t_stack	*ft_stack_new(void)
 {
 	t_stack	*stack;
 
 	stack = ft_calloc(sizeof(t_stack), 1);
 	if (stack == NULL)
 		return (NULL);
-	stack->max_size = max_size;
+	stack->size = 0;
 	return (stack);
 }

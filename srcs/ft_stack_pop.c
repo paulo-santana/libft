@@ -24,5 +24,6 @@ void	*ft_stack_pop(t_stack *stack)
 	top->next = NULL;
 	content = top->content;
 	ft_lstdelone(top, ft_stack_do_nothing);
+	stack->size--;
 	return (content);
 }

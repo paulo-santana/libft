@@ -15,4 +15,5 @@
 void	ft_stack_push(t_stack *stack, void *content)
 {
 	ft_lstadd_front(&stack->top, ft_lstnew(content));
+	stack->size++;
 }
