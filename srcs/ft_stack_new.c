@@ -19,6 +19,5 @@ t_stack	*ft_stack_new(void)
 	stack = ft_calloc(sizeof(t_stack), 1);
 	if (stack == NULL)
 		return (NULL);
-	stack->size = 0;
 	return (stack);
 }
